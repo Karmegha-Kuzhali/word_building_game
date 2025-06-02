@@ -1,5 +1,8 @@
 import json
 from flask import Flask,request
+from dotenv import load_dotenv
+import os
+load_dotenv()
 def init():
     with open('words.json') as f:
         data = json.load(f)
@@ -19,7 +22,7 @@ def play(word,d):
         return {"stat":"NOT OK"}
 app=Flask(__name__)
 
-@app.route('/play',methods=["POST"])
+@app.route("/"+os.getenv("api"),methods=["POST"])
 def wb():
     data=request.get_json()
     re=play(data['word'],d)
