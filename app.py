@@ -30,6 +30,8 @@ app=Flask(__name__,template_folder='Templates')
 
 @app.route('/')
 def index():
+    global d
+    d=init()
     return render_template('index.html')
 
 @app.route("/play",methods=["POST"])
