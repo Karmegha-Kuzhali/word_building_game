@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word building game</title>
-    <style>
+     <style>
         body {
             background: linear-gradient(to right, #f8f9fa, #e0f7fa);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             text-align: center;
-            padding: 40px;
+            padding: 40px 20px;
+            margin: 0;
         }
 
         h1 {
             color: #00796b;
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 15px;
         }
 
         h2 {
-            font-size: 1.2em;
-            margin: 8px 0;
+            font-size: 1.1em;
+            margin: 6px 0;
             font-weight: 500;
             color: #455a64;
         }
 
         h3 {
-            font-size: 1.1em;
-            margin-top: 30px;
+            font-size: 1em;
+            margin-top: 25px;
             color: #37474f;
         }
 
         input[type="text"] {
             padding: 10px 15px;
-            width: 250px;
+            width: 80%;
+            max-width: 300px;
             border: 2px solid #00796b;
             border-radius: 8px;
             font-size: 1em;
@@ -51,7 +53,7 @@
         button {
             padding: 10px 20px;
             font-size: 1em;
-            margin-left: 10px;
+            margin-top: 15px;
             background-color: #00796b;
             color: white;
             border: none;
@@ -65,12 +67,13 @@
         }
 
         #cwd {
-            font-size: 1.3em;
-            margin-top: 30px;
+            font-size: 1.2em;
+            margin-top: 25px;
             color: #d84315;
             font-weight: bold;
         }
-         @media (max-width: 800px) {
+
+        @media (max-width: 500px) {
             h1 {
                 font-size: 2em;
             }
