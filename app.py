@@ -1,13 +1,13 @@
 import json
 from flask import Flask,request,render_template
-from dotenv import load_dotenv
-
-
+import random
 def init():
     with open('words.json') as f:
         data = json.load(f)
+    global used_words
+    used_words=[]
     return data
-used_words=[]
+
 def play(word,d):
     #assuming d is present and loaded
     #a is short for alphabet
@@ -17,7 +17,8 @@ def play(word,d):
             if len(used_words)>0 and used_words[-1][-1]!=word[0]:
                 return {"stat":"UR"}
             used_words.append(word)
-            wd=d[word[-1]].pop(0)
+            ri=random.randint(0,len(d[word[-1]])-1)
+            wd=d[word[-1]].pop(ri)
             used_words.append(wd)
             return {"stat":"OK","word":wd}
         else:
