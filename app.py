@@ -25,7 +25,7 @@ def play(word,d):
             return {"stat":"NOT OK"}
     except:
         return {"stat":"NOT OK"}
-app=Flask(__name__)
+app=Flask(__name__,template_folder='Templates')
 
 
 @app.route('/')
