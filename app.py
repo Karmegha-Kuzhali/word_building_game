@@ -12,7 +12,7 @@ def play(word,d):
     #assuming d is present and loaded
     #a is short for alphabet
     try:
-        word=word.lower()
+        word=word.lower().strip()
         if ((d[word[0]]) and (word in d[word[0]])) and (word not in used_words):
             if len(used_words)>0 and used_words[-1][-1]!=word[0]:
                 return {"stat":"UR"}
