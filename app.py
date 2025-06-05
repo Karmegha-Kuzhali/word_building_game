@@ -1,0 +1,50 @@
+import json
+from flask import Flask,request,render_template
+from dotenv import load_dotenv
+
+
+def init():
+    with open('words.json') as f:
+        data = json.load(f)
+    return data
+used_words=[]
+def play(word,d):
+    #assuming d is present and loaded
+    #a is short for alphabet
+    try:
+        word=word.lower()
+        if ((d[word[0]]) and (word in d[word[0]])) and (word not in used_words):
+            if len(used_words)>0 and used_words[-1][-1]!=word[0]:
+                return {"stat":"UR"}
+            used_words.append(word)
+            wd=d[word[-1]].pop(0)
+            used_words.append(wd)
+            return {"stat":"OK","word":wd}
+        else:
+            return {"stat":"NOT OK"}
+    except:
+        return {"stat":"NOT OK"}
+app=Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route("/play",methods=["POST"])
+def wb():
+    data=request.get_json()
+    re=play(data['word'],d)
+    if re['stat']=='OK':
+        return re,200
+    elif re['stat']=='UR':
+        return re,203
+    else:
+        return re,420
+    
+
+if __name__ == '__main__':
+    global d
+    d=init()
+    app.run()
+
