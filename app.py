@@ -43,7 +43,7 @@ def wb():
     elif re['stat']=='UR':
         return re,203
     else:
-        return re,420
+        return re,220
     
 
 if __name__ == '__main__':
