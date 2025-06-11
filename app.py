@@ -44,8 +44,13 @@ def wb():
         return re,203
     else:
         return re,220
-    
 
+@app.route("/report",methods=["POST"])
+def rep():
+    data=request.get_json()
+    send_email(data['word'])
+    return {"Message":"Success"},200
+    
 if __name__ == '__main__':
     global d
     d=init()
