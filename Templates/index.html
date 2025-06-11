@@ -102,20 +102,26 @@
          style="position: fixed; bottom: 20px; right: 20px;
           width: 50px; height: 50px;
           opacity: 0; z-index: 999;">repo</a>
+    <button  onclick="rep()"
+    style="position: fixed; bottom: 20px; left: 20px;
+          width: 100px; height: 50px;
+          opacity: 1; z-index: 999;">Report</button>
 </body>
 <script >
-    input=document.getElementById("word")
+    let input=document.getElementById("word")
     input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("buttn").click();
   }
   })
+  let used_words=[]
     async function fn(){
     let score=document.getElementById("score")
     let url=window.location.origin
     var res=null 
     let uwd=document.getElementById("word")
+    used_words.push(uwd.value)
     const req= await fetch(url+'/play',{
         method:"POST",
         body:JSON.stringify({
@@ -148,7 +154,28 @@
         elem.innerHTML="The word was either used or does not exist"
     }
     uwd.value=''
-    
+}
+
+async function rep(){
+    let word=used_words[used_words.length -1 ]
+    let elem=document.getElementById("cwd")
+    let url=window.location.origin
+    elem.style.color='black'
+    elem.innerHTML='The word "'+word+'" Will be sent for review'
+    const req= await fetch(url+'/report',{
+        method:"POST",
+        body:JSON.stringify({
+            "word":word
+        }),
+        headers:{
+            "Content-type": "application/json"
+        }
+    }).then(
+        (response)=> response.json())
+        .then((json) => {
+           console.log(json)
+        })
+
 }
 </script>
 </html>
