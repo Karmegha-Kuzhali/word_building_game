@@ -1,6 +1,7 @@
 import json
 from flask import Flask,request,render_template
 import random
+from mail import send_email
 def init():
     with open('words.json') as f:
         data = json.load(f)
