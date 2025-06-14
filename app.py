@@ -1,7 +1,10 @@
 import json
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,send_from_directory
 import random
 from mail import send_email
+import os
+
+
 def init():
     with open('words.json') as f:
         data = json.load(f)
@@ -28,6 +31,10 @@ def play(word,d):
         return {"stat":"NOT OK"}
 app=Flask(__name__,template_folder='Templates')
 
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.abspath(os.path.dirname(__file__)), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
 def index():
