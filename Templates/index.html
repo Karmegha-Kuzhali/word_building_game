@@ -162,8 +162,6 @@ async function rep(){
     let elem=document.getElementById("cwd")
     let url=window.location.origin
     let res=null
-    elem.style.color='black'
-    elem.innerHTML='The word "'+word+'" Will be sent for review'
     const req= await fetch(url+'/report',{
         method:"POST",
         body:JSON.stringify({
@@ -177,7 +175,7 @@ async function rep(){
         .then((json) => {
             res=json
         })
-    if ((res.Message=='NOT OK))
+    if ((res.Message=='NOT OK'))
          {
          elem.style.color='black'
          elem.innerHTML="DO NOT Abuse the report Button"
