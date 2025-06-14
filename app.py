@@ -60,7 +60,7 @@ def rep():
     if len(wd)<3 or wd in d[wd[0]]:
         return {"Message":"NOT OK"},265
     else:
-        send_email(data['word'])
+        send_email(wd)
         return {"Message":"Success"},200
     
 if __name__ == '__main__':
