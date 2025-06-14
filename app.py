@@ -56,8 +56,12 @@ def wb():
 @app.route("/report",methods=["POST"])
 def rep():
     data=request.get_json()
-    send_email(data['word'])
-    return {"Message":"Success"},200
+    wd=data['word']
+    if len(wd)<3 or wd in d[wd[0]]:
+        return {"Message":"NOT OK"},265
+    else:
+        send_email(data['word'])
+        return {"Message":"Success"},200
     
 if __name__ == '__main__':
     global d
