@@ -161,6 +161,7 @@ async function rep(){
     let word=used_words[used_words.length -1 ]
     let elem=document.getElementById("cwd")
     let url=window.location.origin
+    let res=null
     elem.style.color='black'
     elem.innerHTML='The word "'+word+'" Will be sent for review'
     const req= await fetch(url+'/report',{
@@ -174,9 +175,18 @@ async function rep(){
     }).then(
         (response)=> response.json())
         .then((json) => {
-           console.log(json)
+            res=json
         })
-
+    if ((res.Message=='NOT OK))
+         {
+         elem.style.color='black'
+         elem.innerHTML="DO NOT Abuse the report Button"
+         }
+    else
+    {
+        elem.style.color='black'
+        elem.innerHTML='The word "'+word+'" Will be sent for review'
+    }
 }
 </script>
 </html>
