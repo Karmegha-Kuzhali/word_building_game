@@ -56,6 +56,8 @@ def wb():
 @app.route("/report",methods=["POST"])
 def rep():
     data=request.get_json()
+    if not data:
+        return {"Message": "NOT OK"},265
     wd=data['word'].lower().strip()
     if len(wd)<3 or wd in d[wd[0]]:
         return {"Message":"NOT OK"},265
@@ -67,4 +69,5 @@ if __name__ == '__main__':
     global d
     d=init()
     app.run()
+
 
