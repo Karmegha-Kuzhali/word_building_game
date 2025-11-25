@@ -1,5 +1,5 @@
 # Word Building Game
-### Disclaimer: An LLM was used in creating the  `README.MD`
+### Disclaimer: An LLM was used in creating this `README.MD`
 **Word Building Game** is a simple and engaging vocabulary-based web game inspired by a word-chain activity I often play with my mother. Each word must start with the last letter of the previous one, creating a continuous chain. The project showcases interactive web development using **HTML**, **CSS**, and **JavaScript**.
 
 ## 🎯 Objective
