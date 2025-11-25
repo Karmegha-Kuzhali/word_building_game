@@ -1,31 +1,26 @@
-# Word Building Game 
+# Word Building Game
+### Disclaimer: An LLM was used in creating the  `README.MD`
+**Word Building Game** is a simple and engaging vocabulary-based web game inspired by a word-chain activity I often play with my mother. Each word must start with the last letter of the previous one, creating a continuous chain. The project showcases interactive web development using **HTML**, **CSS**, and **JavaScript**.
 
-Word Building Game is a simple yet engaging vocabulary-based web game, inspired by a game I often play with my mother. The core idea is to build a chain of words, where each word starts with the last letter of the previous one. This project serves both as a lighthearted language activity and a small demonstration of interactive web development using HTML, CSS, and JavaScript.
+## 🎯 Objective
+Build a chain of valid words (minimum 3 letters), where each new word begins with the final letter of the previous word. The game alternates turns between the player and the computer.
 
-🎯 Objective
-To enter valid words (minimum three letters long), each beginning with the last letter of the word before it. The game continues in this pattern, alternating between the player and the computer.
+## 🕹️ Features
+- Clean and intuitive user interface  
+- Responsive, mobile-friendly layout  
+- Real-time input handling  
+- Simple and efficient JavaScript game logic  
 
-🕹️ Features
-Intuitive and clean user interface
+## 📌 How to Play
+1. Enter any valid word with at least 3 letters.  
+2. The computer responds with a word that starts with the last letter of yours.  
+3. Continue the chain and enjoy the game!  
 
-Responsive design (mobile-friendly)
+🔗 **Play the game:** https://word-building-game.vercel.app/
 
-Real-time input handling
+## 💡 Motivation
+The idea for this project comes from a word game I play with my mom. It blends nostalgia with coding and demonstrates how a simple real-life activity can be transformed into a meaningful digital experience.
 
-Simple game logic using JavaScript
+## 📄 License
+This project is open for personal or educational use. If you build upon it, credit is appreciated but not required.
 
-📌 How to Play
-Enter any valid word (minimum 3 letters).
-
-The computer responds with a word starting with your word’s last letter.
-
-Continue the chain and enjoy!
-visit (https://word-building-game.vercel.app/)
-
-💡 Motivation
-This project was inspired by a game I play with my mom. It blends nostalgia with code and reflects how simple ideas can be turned into meaningful digital experiences.
-
-📄 License
-This project is open for personal or educational use. If you build on it, feel free to credit or share your version!
-
-(This readme was written with the help of an LLM)
